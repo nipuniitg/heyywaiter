@@ -17,8 +17,6 @@ import org.json.JSONObject;
 public class StartScreen extends Activity {
 
     SQLiteDatabase sqLite;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
