@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Typeface;
@@ -195,7 +196,7 @@ public class Search extends Fragment
                     tempRestaurant.setRestaurantName(obj.getString("RestaurantName"));
                     tempRestaurant.setRestaurantLocation(obj.getString("RestaurantLocation"));
                     tempRestaurant.setRestaurantFoodType(obj.getString("RestaurantFoodType"));
-                    tempRestaurant.setRestaurantRating(obj.getInt("RestaurantRating"));
+                    tempRestaurant.setRestaurantRating(obj.getDouble("RestaurantRating"));
 
                     //check if this product is already there in productResults, if yes, then don't add it again.
                     matchFound = "N";

@@ -6,6 +6,7 @@ package com.example.gangaprasadkoturwar.heyywaiter;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -30,8 +31,8 @@ public class CityScreen extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_screen);
-
-        Typeface type= Typeface.createFromAsset(getAssets(),"fonts/book.TTF");
+        //Toast.makeText(getApplicationContext(),"Just hello",Toast.LENGTH_LONG).show();
+        //Typeface type= Typeface.createFromAsset(getAssets(),"fonts/book.TTF");
 
         //This section is to hide the action bar.
         //ActionBar actionBar = getActionBar();
@@ -54,7 +55,7 @@ public class CityScreen extends Activity {
         }
 
         TextView city_selection=(TextView) findViewById(R.id.SelectCityText);
-        city_selection.setTypeface(type);
+        //city_selection.setTypeface(type);
 
         //defining the array that will hold the City Names.
         String[] city_name_db=new String[(c.getCount()+1)];
@@ -113,18 +114,26 @@ public class CityScreen extends Activity {
                     Cursor c=sqLite.rawQuery("SELECT CITY_NAME FROM USER_PREF",null);
                     if (c.getCount()== 0)
                     {
-                        sqLite.execSQL("insert into USER_PREF VALUES ('"+city_name+"');");
+                        //sqLite.execSQL("insert into USER_PREF VALUES ('"+city_name+"');");
+                        ContentValues val = new ContentValues();
+                        val.put("CITY_NAME",city_name);
+                        sqLite.insert("USER_PREF",null,val);
                     }
                     if(c.moveToFirst())
                     {
-                        sqLite.execSQL("TRUNCATE TABLE USER_PREF");
-                        sqLite.execSQL("insert into USER_PREF VALUES ('"+city_name+"');");
+                        sqLite.execSQL("DELETE FROM USER_PREF;");
+                        sqLite.delete("USER_PREF",null,null);
+                        ContentValues val = new ContentValues();
+                        val.put("CITY_NAME",city_name);
+                        sqLite.insert("USER_PREF",null,val);
+                        //sqLite.execSQL("insert into USER_PREF VALUES ('"+city_name+"');");
                         //sqLite.execSQL("update USER_PREF set CITY_NAME = '"+city_name+"'");
                     }
 
                     Intent intent=new Intent(CityScreen.this,HomeScreen.class);
                     startActivity(intent);
                     sqLite.close();
+                    c.close();
                     finish();
                 }
             }

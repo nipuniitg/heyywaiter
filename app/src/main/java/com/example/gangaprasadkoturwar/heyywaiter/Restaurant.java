@@ -9,7 +9,7 @@ public class Restaurant {
     String name;
     String location;
     String foodType;
-    Integer rating;
+    Double rating;
 
     public String getRestaurantCode(){
         return code;
@@ -27,7 +27,7 @@ public class Restaurant {
         return foodType;
     }
 
-    public Integer getRestaurantRating(){
+    public Double getRestaurantRating(){
         return rating;
     }
 
@@ -47,7 +47,7 @@ public class Restaurant {
         foodType = input;
     }
 
-    public void setRestaurantRating(Integer input){
+    public void setRestaurantRating(Double input){
         rating = input;
     }
 }

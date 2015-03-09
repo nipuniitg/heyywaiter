@@ -10,7 +10,7 @@ import android.view.Menu;
 public class HomeScreen extends FragmentActivity implements ActionBar.TabListener
 {
 
-    ActionBar bar;
+    //ActionBar bar;
     ViewPager viewpager;
     FragmentPageAdapter ft;
 
@@ -25,7 +25,7 @@ public class HomeScreen extends FragmentActivity implements ActionBar.TabListene
         setContentView(viewpager);
         ft = new FragmentPageAdapter(getSupportFragmentManager());
         viewpager.setAdapter(ft);
-
+        /*
         final ActionBar bar = getActionBar();
         bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         bar.setDisplayOptions(0, ActionBar.DISPLAY_SHOW_TITLE);
@@ -33,13 +33,13 @@ public class HomeScreen extends FragmentActivity implements ActionBar.TabListene
         bar.addTab(bar.newTab().setText("Search").setTabListener(this));
         bar.addTab(bar.newTab().setText("Cart").setTabListener(this));
         bar.addTab(bar.newTab().setText("Quick Order").setTabListener(this));
-
+        */
         viewpager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
             public void onPageSelected(int arg0) {
                 // TODO Auto-generated method stub
-                bar.setSelectedNavigationItem(arg0);
+                //bar.setSelectedNavigationItem(arg0);
             }
 
             @Override
