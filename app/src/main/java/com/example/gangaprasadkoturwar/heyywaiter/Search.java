@@ -61,7 +61,7 @@ public class Search extends Fragment
 
         //define a typeface for formatting text fields and listview.
 
-        type= Typeface.createFromAsset(activity.getAssets(),"fonts/book.TTF");
+        //type= Typeface.createFromAsset(activity.getAssets(),"fonts/book.TTF");
         myFragmentView = inflater.inflate(R.layout.fragment_search, container, false);
 
         search=(SearchView) myFragmentView.findViewById(R.id.searchView1);
@@ -208,7 +208,12 @@ public class Search extends Fragment
                     tempRestaurant.setRestaurantName(obj.getString("resname"));
                     tempRestaurant.setRestaurantLocation(obj.getString("address"));
                     tempRestaurant.setRestaurantFoodType(obj.getString("type"));
+<<<<<<< HEAD
                     tempRestaurant.setRestaurantRating(obj.getDouble("avgrating"));
+=======
+                    String rating = obj.getString("avgrating");
+                    tempRestaurant.setRestaurantRating(Double.parseDouble(rating));
+>>>>>>> origin/master
 
                     //check if this restaurant is already there in restaurantResults, if yes, then don't add it again.
                     matchFound = "N";

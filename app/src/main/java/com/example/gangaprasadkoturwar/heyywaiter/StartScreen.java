@@ -129,7 +129,8 @@ public class StartScreen extends Activity {
                                 Intent intent = new Intent(StartScreen.this, CityScreen.class);
                                 startActivity(intent);
                             } else {
-                                Intent intent = new Intent(StartScreen.this, MainActivity.class);
+                                //Intent intent = new Intent(StartScreen.this, MainActivity.class);
+                                Intent intent = new Intent( StartScreen.this, Search.class);
                                 startActivity(intent);
                             }
                             finish();
