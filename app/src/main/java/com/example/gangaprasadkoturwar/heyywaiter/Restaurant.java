@@ -9,6 +9,7 @@ public class Restaurant {
     String name;
     String location;
     String foodType;
+    String priceRange;
     Double rating;
 
     public String getRestaurantCode(){
@@ -25,6 +26,10 @@ public class Restaurant {
 
     public String getRestaurantFoodType(){
         return foodType;
+    }
+
+    public String getRestaurantPriceRange(){
+        return priceRange;
     }
 
     public Double getRestaurantRating(){
@@ -49,6 +54,10 @@ public class Restaurant {
 
     public void setRestaurantRating(Double input){
         rating = input;
+    }
+
+    public void setRestaurantPriceRange(String input){
+        priceRange = input;
     }
 }
 

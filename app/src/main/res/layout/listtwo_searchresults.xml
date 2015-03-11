@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/productImage"
+        android:id="@+id/restaurantImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -18,10 +18,10 @@
         android:src="@drawable/ic_launcher" />
 
     <TextView
-        android:id="@+id/product_name"
+        android:id="@+id/restaurant_name"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/productImage"
+        android:layout_toRightOf="@+id/restaurantImage"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
         android:text="Product Name"
@@ -30,37 +30,11 @@
         android:textSize="18dp" />
 
     <TextView
-        android:id="@+id/product_mrp"
+        android:id="@+id/restaurant_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/productImage"
-        android:layout_below="@+id/product_name"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:text="MRP:"
-        android:textColor="#000000"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="14dp" />
-
-    <TextView
-        android:id="@+id/product_mrpvalue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/product_mrp"
-        android:layout_below="@+id/product_name"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:text="Rs 100"
-        android:textColor="#000000"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="14dp" />
-
-    <TextView
-        android:id="@+id/product_bb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/product_mrpvalue"
-        android:layout_below="@+id/product_name"
+        android:layout_toRightOf="@+id/restaurant_price_range"
+        android:layout_below="@+id/restaurant_name"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="20dp"
         android:text="BB Price:"
@@ -69,23 +43,35 @@
         android:textSize="14dp" />
 
     <TextView
-        android:id="@+id/product_bbvalue"
+        android:id="@+id/restaurant_food_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/product_bb"
-        android:layout_below="@+id/product_name"
+        android:layout_toRightOf="@+id/restaurant_location"
+        android:layout_below="@+id/restaurant_name"
         android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:text="Rs 95"
+        android:layout_marginLeft="20dp"
+        android:text="BB Price:"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
         android:textSize="14dp" />
 
+    <TextView
+        android:id="@+id/restaurant_price_range"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/restaurant_food_type"
+        android:layout_below="@+id/restaurant_name"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:textColor="#000000"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="14dp" />
+
     <Button
-        android:id="@+id/add_cart"
+        android:id="@+id/restaurant_menu"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/matching_product"
+        android:layout_below="@+id/matching_restaurant"
         android:layout_alignParentRight="true"
         android:layout_marginRight ="10dp"
         android:gravity="center"
