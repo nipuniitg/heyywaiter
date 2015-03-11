@@ -195,7 +195,7 @@ public class Search extends Fragment
 
 
                 JSONObject json = jParser.getJSONFromUrl(url);
-                restaurantList = json.getJSONArray("ProductList");
+                restaurantList = json.getJSONArray("Restaurants");
                 for(int i=0;i<restaurantList.length();i++)
                 {
                     /*@Nipun,
@@ -205,10 +205,10 @@ public class Search extends Fragment
                     */
                     tempRestaurant = new Restaurant();
                     JSONObject obj=restaurantList.getJSONObject(i);
-                    tempRestaurant.setRestaurantName(obj.getString("RestaurantName"));
-                    tempRestaurant.setRestaurantLocation(obj.getString("RestaurantLocation"));
-                    tempRestaurant.setRestaurantFoodType(obj.getString("RestaurantFoodType"));
-                    tempRestaurant.setRestaurantRating(obj.getDouble("RestaurantRating"));
+                    tempRestaurant.setRestaurantName(obj.getString("resname"));
+                    tempRestaurant.setRestaurantLocation(obj.getString("address"));
+                    tempRestaurant.setRestaurantFoodType(obj.getString("type"));
+                    tempRestaurant.setRestaurantRating(obj.getDouble("avgrating"));
 
                     //check if this restaurant is already there in restaurantResults, if yes, then don't add it again.
                     matchFound = "N";
